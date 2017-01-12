@@ -7,14 +7,14 @@ import android.widget.Button;
 import android.widget.RadioButton;
 
 
-public class quizQuestions extends AppCompatActivity implements View.OnClickListener {
+public class QuizQuestions extends AppCompatActivity implements View.OnClickListener {
 
 
     private int successQuestion;
     private int currentQuestion;
     private int totalQuestion;
     private int userSolution;
-    private question[] questions;
+    private Question[] questions;
     private Button checkQuestion;
     private RadioButton[] rbQuestions;
 
@@ -24,20 +24,20 @@ public class quizQuestions extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_quiz_questions);
 
         rbQuestions = new RadioButton[4];
-        questions = new question[5];
+        questions = new Question[5];
         checkQuestion = (Button)findViewById(R.id.checkButton);
 
         initVariables(questions,checkQuestion,rbQuestions);
     }
 
-    private void initVariables(question[] q, Button checkQuestions, RadioButton[] rbQuestionsa) {
+    private void initVariables(Question[] q, Button checkQuestions, RadioButton[] rbQuestionsa) {
 
         setSuccessQuestion(0);
         setTotalQuestion(0);
         setCurrentQuestion(0);
 
         initQuestions(q);
-        initrButtonQuestion(rbQuestionsa);
+        initrButtonQuestion(rbQuestions);
 
         checkQuestions.setOnClickListener(this);
 
@@ -62,8 +62,9 @@ public class quizQuestions extends AppCompatActivity implements View.OnClickList
 
     }
 
-    private void initQuestions(question[] q) {
-        q[0] = new question();
+    private void initQuestions(Question[] q) {
+
+        q[0] = new Question();
         q[0].setTheQuestion("1+1");
         q[0].addAnswer("1");
         q[0].addAnswer("2");
@@ -71,7 +72,7 @@ public class quizQuestions extends AppCompatActivity implements View.OnClickList
         q[0].addAnswer("4");
         q[0].setSolution("2");
 
-        q[1] = new question();
+        q[1] = new Question();
         q[1].setTheQuestion("2+2");
         q[1].addAnswer("1");
         q[1].addAnswer("2");
@@ -79,7 +80,7 @@ public class quizQuestions extends AppCompatActivity implements View.OnClickList
         q[1].addAnswer("4");
         q[1].setSolution("4");
 
-        q[2] = new question();
+        q[2] = new Question();
         q[2].setTheQuestion("3+3");
         q[2].addAnswer("1");
         q[2].addAnswer("2");
@@ -87,7 +88,7 @@ public class quizQuestions extends AppCompatActivity implements View.OnClickList
         q[2].addAnswer("4");
         q[2].setSolution("6");
 
-        q[3] = new question();
+        q[3] = new Question();
         q[3].setTheQuestion("4+4");
         q[3].addAnswer("1");
         q[3].addAnswer("8");
@@ -95,7 +96,7 @@ public class quizQuestions extends AppCompatActivity implements View.OnClickList
         q[3].addAnswer("4");
         q[3].setSolution("8");
 
-        q[4] = new question();
+        q[4] = new Question();
         q[4].setTheQuestion("5+5");
         q[4].addAnswer("1");
         q[4].addAnswer("2");
@@ -117,7 +118,6 @@ public class quizQuestions extends AppCompatActivity implements View.OnClickList
                     setSuccessQuestion(getSuccessQuestion()+1);
                     System.out.println("Pentakill");
 
-                    
                 }
 
                 setCurrentQuestion(getCurrentQuestion()+1);
@@ -125,7 +125,6 @@ public class quizQuestions extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.questionOne:
                 setUserSolution(0);
-
                 break;
 
             case R.id.questionTwo:

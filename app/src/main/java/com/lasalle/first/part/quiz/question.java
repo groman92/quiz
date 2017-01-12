@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by gerardromansolanas on 10/1/17.
  */
 
-public class question {
+public class Question {
 
     private ArrayList<String> answers;
     private String theQuestion;
@@ -14,7 +14,7 @@ public class question {
     private String solution;
 
 
-    public question() {
+    public Question() {
         answers = new ArrayList<>();
         theQuestion = new String();
         solution = new String();

@@ -8,48 +8,57 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.lasalle.first.part.quiz.quizQuestions">
+    tools:context="com.lasalle.first.part.quiz.QuizQuestions">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RadioButton
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="266dp" >
+
+            <RadioButton
+                android:text="RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:id="@+id/questionOne"
+                android:layout_below="@+id/radioButton2"
+                android:layout_alignStart="@+id/radioButton2"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/questionOne"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="14dp"
+                android:id="@+id/questionTwo"
+                android:layout_weight="1" />
+
+            <RadioButton
             android:text="RadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
-            android:id="@+id/questionOne"
-            android:layout_below="@+id/radioButton2"
-            android:layout_alignStart="@+id/radioButton2" />
+            android:id="@+id/questionThree"
+            android:layout_below="@+id/radioButton4"
+            android:layout_alignStart="@+id/radioButton4"
+            android:layout_marginTop="21dp"
+                android:layout_weight="1" />
 
-        <RadioButton
-            android:text="RadioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/questionOne"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="14dp"
-            android:id="@+id/questionTwo" />
-
-        <RadioButton
+            <RadioButton
         android:text="RadioButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/questionThree"
-        android:layout_below="@+id/radioButton4"
-        android:layout_alignStart="@+id/radioButton4"
-        android:layout_marginTop="21dp" />
-
-        <RadioButton
-    android:text="RadioButton"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/questionTwo"
-    android:layout_alignParentStart="true"
-    android:layout_marginTop="22dp"
-    android:id="@+id/questionFour" />
+        android:layout_below="@+id/questionTwo"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp"
+        android:id="@+id/questionFour"
+                android:layout_weight="1" />
+        </RadioGroup>
 
         <Button
             android:text="Check"
