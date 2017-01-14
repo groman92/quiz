@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 Intent intent = new Intent(
                         getApplicationContext(),
-                        QuizQuestions.class);
+                        ResultActivity.class);
 
                 startActivity(intent);
                 break;

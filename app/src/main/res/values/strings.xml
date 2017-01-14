@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Quiz</string>
     <string name="current_question">Question (%1$d of %2$d)</string>
+    <string name="totalNumberQuestions">Total number of questions:</string>
+    <string name="totalCorrectQuestions">Correct</string>
+    <string name="totalIncorrectQuestions">Incorrect</string>
+
+    <string name="yourResult">Your results:</string>
+
+    <string name="totalQuestions">%1$d</string>
+    <string name="totalCorrect">%1$d</string>
+    <string name="totalIncorrect">%1$d</string>
+
+
 </resources>
