@@ -10,6 +10,7 @@
     <string name="totalQuestions">%1$d</string>
     <string name="totalCorrect">%1$d</string>
     <string name="totalIncorrect">%1$d</string>
+    <string name="startQuiz">Try Again</string>
 
 
 </resources>

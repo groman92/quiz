@@ -1,5 +1,6 @@
 package com.lasalle.first.part.quiz.activity;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class QuizQuestions extends AppCompatActivity implements View.OnClickListener {
+public class QuizQuestionsActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     private int currentQuestion;
@@ -38,8 +39,6 @@ public class QuizQuestions extends AppCompatActivity implements View.OnClickList
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_questions);
-
-
 
         setCurrentQuestion(0);
         rbQuestions = new ArrayList<>();
@@ -94,16 +93,37 @@ public class QuizQuestions extends AppCompatActivity implements View.OnClickList
 
         switch (view.getId()){
             case R.id.checkButton:
+
                 System.out.println("CheckButton");
                 View radioButton = rgQuestion.findViewById(rgQuestion.getCheckedRadioButtonId());
 
                 int indexResposta = rgQuestion.indexOfChild(radioButton);
 
                 if (questionManager.checkQuestion(getCurrentQuestion(),indexResposta)){
-                    System.out.println("Acertaste");
+                    questionManager.youAreRight();
                 }else{
-                    System.out.println("Te bañaste");
+                    questionManager.youAreWrong();
                 }
+
+                setCurrentQuestion(getCurrentQuestion()+1);
+                if (getCurrentQuestion() == questionManager.countQuestions())
+                {
+                    Intent intent = new Intent(
+                            getApplicationContext(),
+                            ResultActivity.class);
+
+                    intent.putExtra("Total",questionManager.countQuestions());
+                    intent.putExtra("Correct",questionManager.getCorrectQuestions());
+                    intent.putExtra("Incorrect",questionManager.getWrongQuestions());
+
+                    startActivity(intent);
+                    finish();
+                }else{
+                    formatTitle();
+                    formatQuestion();
+                }
+
+
 
                 break;
 
