@@ -3,9 +3,9 @@
 
 # Project Structure
 
-#    /Activity
-#    /data
-#    /manager
-#    /model
+##    /Activity
+##    /data
+##    /manager
+##    /model
 
 
