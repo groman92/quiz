@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         Button initialButton = (Button)findViewById(R.id.initialButton);
 
         initialButton.setOnClickListener(this);
@@ -35,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             default:
-
+                System.out.println("Wrong Button");
                 break;
         }
     }

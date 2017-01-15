@@ -29,8 +29,6 @@ public class QuizQuestionsActivity extends AppCompatActivity implements View.OnC
     private List<RadioButton> rbQuestions;
     //RADIOGROUP
     private RadioGroup rgQuestion;
-    //DATA
-    private List<Question> questions;
     //MANAGER
     private QuestionManager questionManager;
 
@@ -94,7 +92,6 @@ public class QuizQuestionsActivity extends AppCompatActivity implements View.OnC
         switch (view.getId()){
             case R.id.checkButton:
 
-                System.out.println("CheckButton");
                 View radioButton = rgQuestion.findViewById(rgQuestion.getCheckedRadioButtonId());
 
                 int indexResposta = rgQuestion.indexOfChild(radioButton);
@@ -106,6 +103,7 @@ public class QuizQuestionsActivity extends AppCompatActivity implements View.OnC
                 }
 
                 setCurrentQuestion(getCurrentQuestion()+1);
+
                 if (getCurrentQuestion() == questionManager.countQuestions())
                 {
                     Intent intent = new Intent(
