@@ -1,11 +1,11 @@
-# quiz - Project Structure
+# 1. quiz - Project Structure
 ### APP
 /Activity
 /data
 /manager
 /model
 
-### Work Flow
+# 2. quiz - Work Flow
 
 Start Quiz -> 5 questions -> Results
 
